@@ -3,6 +3,32 @@
 Cheat sheet aimed at running for an embedded device.
 
 
+# Running
+
+You can encapsulate options in to a single file, instead of running:
+```
+pclp64_linux co-gcc.lnt /opt/pclp-1.3/linux/lnt/au-misra3.lnt my-project.lnt
+```
+Create a file:
+
+my-project-all.lnt:
+```
+co-gcc.lnt
+
+/opt/pclp-1.3/linux/lnt/au-misra3.lnt
+
+// Other Options
+-wlib(4) -wlib(1) // Turn off warnings for library files
+
+my-project.lnt
+```
+
+Then to run:
+```
+pclp64_linux my-project-all.lnt
+```
+
+
 # Library Files
 
 ## Check the classification of files
