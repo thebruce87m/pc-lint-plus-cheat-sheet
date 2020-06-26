@@ -65,6 +65,11 @@ Inhibit treating a file as a library
 
 ## Suppressions
 
+Unused macro
+```
+#define UNUSED //lint !e750
+```
+
 Suppress messages 438 and 529 within the body of foo
 ```
 void foo() {
