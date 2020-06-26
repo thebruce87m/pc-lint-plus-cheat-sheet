@@ -77,3 +77,13 @@ void foo() {
 int i = 0;
 }
 ```
+
+Multi-line suppress
+```
+//lint -save -e9003
+// needed by stm32l4xx_hal_rcc.c
+const uint8_t  AHBPrescTable[16] = { 0U, 0U,
+                                     0U,
+                                     8U, 9U };
+//lint -restore
+```
