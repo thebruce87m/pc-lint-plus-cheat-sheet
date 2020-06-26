@@ -65,6 +65,13 @@ Inhibit treating a file as a library
 
 ## Suppressions
 
+* -e# disables a message where # is a message number or pattern
+* +e# re-enables message(s) #
+* -e(# [,# ... ]) inhibits message # s for the next expression
+* --e(# [,# ... ]) inhibits message # s for the entire enclosing expression
+* -e{# [,# ... ]} inhibits message # s for the next statement
+* --e{# [,# ... ]} inhibits message # s for the entire enclosing braced region
+
 Unused macro
 ```
 #define UNUSED //lint !e750
