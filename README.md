@@ -61,3 +61,14 @@ Inhibit treating a file as a library
 // Wrong! - Doesn't seem to support paths, even though it reports the paths
 -libh(inc/main.h)
 ```
+
+
+## Suppressions
+
+Suppress messages 438 and 529 within the body of foo
+```
+void foo() {
+/*lint --e{438, 529} */
+int i = 0;
+}
+```
