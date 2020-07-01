@@ -70,6 +70,21 @@ Inhibit treating a file as a library
 * -e(# [,# ... ]) inhibits message # s for the next expression
 * --e(# [,# ... ]) inhibits message # s for the entire enclosing expression
 * -e{# [,# ... ]} inhibits message # s for the next statement
+```
+//lint -e{715} suppress "k not referenced"
+void f(int n, unsigned u, int k)
+// 715 not issued
+{
+  //lint -e{732} suppress "loss of sign"
+  u = n; // 732 not issued
+
+  //lint -e{713} suppress "loss of precision"
+  if (n) {
+    n = u; // 713 not issued
+  }
+}
+```
+
 * --e{# [,# ... ]} inhibits message # s for the entire enclosing braced region
 
 Unused macro
